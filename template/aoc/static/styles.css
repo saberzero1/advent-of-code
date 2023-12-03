@@ -33,6 +33,9 @@ h1, h2 {
   font-size: 1em;
   font-weight: normal;
 }
+.anchor-link {
+    display: none;
+}
 pre:not(:has(code)),
 code {
   position: relative;
