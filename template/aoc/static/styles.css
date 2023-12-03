@@ -21,6 +21,9 @@ code {
     background-color: #10101a;
     filter: brightness(1.5);
 }
+div.input_area {
+  background-color: #0f0f23;
+}
 
 a {
   text-decoration: none;
@@ -33,7 +36,8 @@ h1, h2 {
   font-size: 1em;
   font-weight: normal;
 }
-.anchor-link {
+.anchor-link,
+div.prompt.input_prompt {
     display: none;
 }
 pre:not(:has(code)),
