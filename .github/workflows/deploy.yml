@@ -22,7 +22,7 @@ jobs:
         run: cp -r /home/runner/work/advent-of-code/advent-of-code/template/aoc/ /home/runner/.local/share/jupyter/templates/
 
       - name: Test file
-        run: ls /home/runner/.local/share/jupyter/
+        run: ls /home/runner/.local/share/jupyter/templates/aoc/
       
       - name: Convert .ipynb to .html
         run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template aoc --to html {} \; -execdir rm {} \;
