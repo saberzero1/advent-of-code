@@ -20,6 +20,10 @@ jobs:
 
       - name: Copy template
         run: cp -r /home/runner/work/advent-of-code/advent-of-code/template/ /home/runner/.local/share/jupyter/
+
+      - name: Test file
+        run: ls /home/runner/.local/share/jupyter/
+      
       - name: Convert .ipynb to .html
         run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template aoc --to html {} \; -execdir rm {} \;
 
