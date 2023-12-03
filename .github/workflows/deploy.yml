@@ -23,6 +23,9 @@ jobs:
 
       - name: Test file
         run: ls /home/runner/.local/share/jupyter/templates/aoc/
+
+      - name: install
+        run: pip show nbconvert
       
       - name: Convert .ipynb to .html
         run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template aoc --to html {} \; -execdir rm {} \;
