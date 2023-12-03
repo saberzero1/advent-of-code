@@ -18,15 +18,12 @@ jobs:
       - name: Install nbconvert
         run: pip install nbconvert
 
+      - name: Install IPython
+        run: pip install ipython
+
       - name: Copy template
         run: mkdir -p /home/runner/.local/share/jupyter/nbconvert/templates/aoc/static/ && cp -r /home/runner/work/advent-of-code/advent-of-code/template/aoc/ /home/runner/.local/share/jupyter/nbconvert/templates/
 
-      - name: Test file
-        run: ls /home/runner/.local/share/jupyter/nbconvert/templates/aoc/
-
-      - name: install
-        run: pip show nbconvert && ls /home/runner/.local/lib/python3.10/site-packages/
-      
       - name: Convert .ipynb to .html
         run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template aoc --to html {} \; -execdir rm {} \;
 
