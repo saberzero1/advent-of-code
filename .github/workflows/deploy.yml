@@ -19,7 +19,7 @@ jobs:
         run: pip install nbconvert
 
       - name: Convert .ipynb to .html
-        run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template classic --to html {} \; -execdir rm {} \;
+        run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --TemplateExporter.extra_template_basedirs=template --template aoc --to html {} \; -execdir rm {} \;
 
       - name: Push to gh-pages branch
         uses: s0/git-publish-subdir-action@develop
