@@ -19,8 +19,7 @@ jobs:
         run: pip install nbconvert
 
       - name: Copy template
-        run: cp -r /home/runner/work/advent-of-code/advent-of-code/template/ /usr/local/share/jupyter/
-
+        run: cp -r /home/runner/work/advent-of-code/advent-of-code/template/ /home/runner/.local/share/jupyter
       - name: Convert .ipynb to .html
         run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --TemplateExporter.extra_template_basedirs=template --template aoc --to html {} \; -execdir rm {} \;
 
