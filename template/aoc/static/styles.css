@@ -16,6 +16,12 @@ header, main {
   -webkit-text-size-adjust: none;
 }
 
+pre:not(:has(code)),
+code {
+    background-color: #10101a;
+    filter: brightness(1.5);
+}
+
 a {
   text-decoration: none;
   color: #009900;
