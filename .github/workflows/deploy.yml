@@ -32,7 +32,7 @@ jobs:
         run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template aoc --to html {} \; -execdir rm {} \;
 
       - name: Replace links
-        run: find . -name '*.html' -type f -execdir sed 's/.ipynb">/.html">/g' {} \;
+        run: find . -name '*.html' -type f -execdir sed -i 's/.ipynb">/.html">/g' {} \;
 
       - name: Push to gh-pages branch
         uses: s0/git-publish-subdir-action@develop
