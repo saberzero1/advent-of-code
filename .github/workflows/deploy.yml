@@ -19,7 +19,7 @@ jobs:
         run: pip install nbconvert
 
       - name: Copy template
-        run: mkdir -p /home/runner/.local/share/jupyter/templates/aoc/static/ && cp -r /home/runner/work/advent-of-code/advent-of-code/template/aoc/ /home/runner/.local/share/jupyter/templates/aoc/
+        run: mkdir -p /home/runner/.local/share/jupyter/templates/aoc/static/ && cp -r /home/runner/work/advent-of-code/advent-of-code/template/aoc/ /home/runner/.local/share/jupyter/templates/
 
       - name: Test file
         run: ls /home/runner/.local/share/jupyter/templates/aoc/
