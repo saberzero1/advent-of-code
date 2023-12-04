@@ -9,8 +9,8 @@
 {%- block html_head -%}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% set nb_title = nb.metadata.get('title', resources['metadata']['name']) | escape_html_keep_quotes %}
-{% if (int({{nb_title}}) > 0) %}
+{% set nb_title = nb.metadata.get('title', resources['metadata']['name']) | escape_html_keep_quotes | int %}
+{% if (nb_title > 0) %}
 <title>Day {{nb_title}}</title>
 {% else %}
 <title>{{nb_title}}</title>
