@@ -61,8 +61,11 @@ code {
   display: inline-block;
   margin: 0;
   padding: 0;
+}
+pre:not(:has(code)) {
   overflow-x: scroll;
 }
+
 pre:not(:has(code)):before,
 code:before {
   z-index: -1;
