@@ -35,14 +35,14 @@ code {
 .highlight > * > pre {
   position: relative;
   width: 100%;
-  max-width: calc(8 * 112); /* 80 char per line */
+  max-width: 900px; /* 80 char per line */
   overflow-x: scroll;
 }
 .highlight > pre:before,
 .highlight > * > pre:before {
   position: absolute;
   width: 100%;
-  max-width: calc(8 * 112); /* 80 char per line */
+  max-width: 900px; /* 80 char per line */
 }
 
 .output_subarea > pre,
