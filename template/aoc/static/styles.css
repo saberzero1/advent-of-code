@@ -29,6 +29,7 @@ code {
 .highlight,
 div.input_area {
   background-color: #0f0f23;
+  max-width: 100%;
 }
 
 a {
