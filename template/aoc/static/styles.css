@@ -10,7 +10,7 @@ body {
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
   font-size: 14pt;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   /*min-width: 60em;*/
 }
@@ -34,13 +34,13 @@ code {
 .highlight > pre,
 .highlight > * > pre {
   position: relative;
-  width: calc(100vw - 32px);
+  max-width: 100%;
   overflow-x: scroll;
 }
 .highlight > pre:before,
 .highlight > * > pre:before {
   position: absolute;
-  width: calc(100vw - 32px);
+  max-width: 100%;
 }
 
 .output_subarea > pre,
