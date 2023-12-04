@@ -594,4 +594,5 @@ form#settings input[type="checkbox"] ~ span {
   background-color: #0f0f23 !important;
   border-color: #333340 !important;
   color: #cccccc !important;
+  display: none !important;
 }
