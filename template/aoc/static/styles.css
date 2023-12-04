@@ -126,8 +126,8 @@ code:before {
   content: "";
   position: absolute;
   display: block;
-  left: -2px;
-  right: -2px;
+  /*left: -2px;*/
+  /*right: -2px;*/
   top: 3px;
   bottom: 0px;
   background: #10101a;
