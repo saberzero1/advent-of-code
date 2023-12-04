@@ -73,6 +73,9 @@ code {
   width: calc(100vw - 24px);
   max-width: 900px; /* 80 char per line */
 }
+pre > code {
+  overflow-x: scroll;
+}
 
 .output_subarea > pre,
 .output_subarea > * > pre {
