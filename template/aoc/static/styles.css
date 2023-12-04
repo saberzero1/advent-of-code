@@ -45,7 +45,7 @@ main, figure, figcaption { display:block; }
 pre, code { font-family: "Source Code Pro", monospace; }
 header, main {
   -webkit-text-size-adjust: none;
-  max-width: 100%;
+  max-width: calc(100% - 16px);
 }
 
 pre:not(:has(code)),
