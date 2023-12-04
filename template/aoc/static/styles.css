@@ -52,7 +52,7 @@ header, main {
   max-width: 900px;
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 932px) {
   header, main {
     max-width: calc(100% - 16px);
   }
