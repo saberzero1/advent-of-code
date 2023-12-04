@@ -72,7 +72,7 @@ pre.wrap {
   opacity: .5;
 }
 p.wrap {
-  width: 45em;
+  /*width: 45em;*/
 }
 
 .hidden-until-hover {
@@ -335,10 +335,10 @@ article li:before {
 }
 
 form#settings input[type="radio"] ~ span {
-  min-width: 30em;
+  /*min-width: 30em;*/
 }
 form#settings input[type="checkbox"] ~ span {
-  min-width: 30em;
+  /*min-width: 30em;*/
 }
 
 .share {
@@ -434,7 +434,7 @@ form#settings input[type="checkbox"] ~ span {
 }
 .stats > a {
   color: #cccccc;
-  min-width: 35em;
+  /*min-width: 35em;*/
   display: inline-block;
 }
 .stats > a:hover, .stats > a:focus {
