@@ -79,8 +79,7 @@ code {
   overflow: visible;
 }
 
-.output_subarea > pre:before,
-.output_subarea > * > pre:before {
+.output_subarea:before {
   content: 'Output: ';
 }
 
