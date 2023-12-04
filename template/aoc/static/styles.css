@@ -65,7 +65,7 @@ code {
   position: relative;
   width: calc(100vw - 40px + 12px);
   max-width: 900px; /* 80 char per line */
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .highlight > pre:before,
 .highlight > * > pre:before {
@@ -75,7 +75,7 @@ code {
 }
 pre > code {
   max-width: 100%;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .output_subarea > pre,
@@ -117,7 +117,7 @@ code {
   border: 1px solid #333340;
 }
 pre:not(:has(code)) {
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 pre:not(:has(code)):before,
