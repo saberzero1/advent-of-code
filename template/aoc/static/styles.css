@@ -20,6 +20,7 @@ main, figure, figcaption { display:block; }
 pre, code { font-family: "Source Code Pro", monospace; }
 header, main {
   -webkit-text-size-adjust: none;
+  max-width: 100%;
 }
 
 pre:not(:has(code)),
@@ -27,12 +28,8 @@ code {
     background-color: #10101a;
     filter: brightness(1.5);
 }
-.input,
-.prompt,
-.input_prompt,
-.inner_cell,
-.input_area {
-  max-width: 100%;
+.input {
+  overflow-x: scroll;
 }
 
 .highlight,
