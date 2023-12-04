@@ -28,13 +28,17 @@ code {
     background-color: #10101a;
     filter: brightness(1.5);
 }
+.input {
+  width: fit-content;
+}
 .highlight > pre,
 .highlight > * > pre {
   width: fit-content;
   overflow-x: scroll;
 }
 
-.output_subarea {
+.output_subarea > pre,
+.output_subarea > * > pre {
   overflow: visible;
 }
 
