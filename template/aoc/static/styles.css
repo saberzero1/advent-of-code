@@ -583,3 +583,9 @@ form#settings input[type="checkbox"] ~ span {
 .sponsor {
   margin: 1em 0;
 }
+
+#MathJax_Message {
+  background-color: #0f0f23;
+  border-color: #333340;
+  color: #333340;
+}
