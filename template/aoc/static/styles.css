@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300');
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #333340 #0f0f23;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0f0f23;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #333340;
+    border-radius: 10px;
+    border: 3px solid #0f0f23;
+  }
+
 * {
   box-sizing: border-box;
 }
@@ -34,14 +56,14 @@ code {
 .highlight > pre,
 .highlight > * > pre {
   position: relative;
-  width: 1000vw;
+  width: 100vw;
   max-width: 900px; /* 80 char per line */
   overflow-x: scroll;
 }
 .highlight > pre:before,
 .highlight > * > pre:before {
   position: absolute;
-  width: 1000vw;
+  width: 100vw;
   max-width: 900px; /* 80 char per line */
 }
 
