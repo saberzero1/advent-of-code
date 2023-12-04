@@ -25,6 +25,11 @@
   mermaid.initialize({ startOnLoad: true });
 </script>
 {%- endblock html_head_js_mermaidjs -%}
+<script type="text/javascript">
+  window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='CODE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});
+  window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='PRE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});
+  window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='SPAN'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target.parentNode);s.addRange(r);}});
+</script>
 {%- endblock html_head_js -%}
 
 {% block jupyter_widgets %}
