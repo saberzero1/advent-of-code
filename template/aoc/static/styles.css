@@ -21,11 +21,6 @@ pre, code { font-family: "Source Code Pro", monospace; }
 header, main {
   -webkit-text-size-adjust: none;
   max-width: 100%;
-  overflow-x: scroll;
-}
-
-.input {
-  width: fit-content;
 }
 
 pre:not(:has(code)),
@@ -35,7 +30,12 @@ code {
 }
 .highlight > pre,
 .highlight > * > pre {
-  /*overflow-x: scroll;*/
+  width: fit-content;
+  overflow-x: scroll;
+}
+
+.output_subarea {
+  overflow: visible;
 }
 
 .highlight,
