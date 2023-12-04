@@ -23,6 +23,10 @@
     border: 3px solid #0f0f23;
   }
 
+  *::-webkit-scrollbar-corner {
+    background: #333340;
+  }
+
 * {
   box-sizing: border-box;
 }
