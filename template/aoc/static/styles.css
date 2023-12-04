@@ -683,3 +683,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .vi { color: var(--syntax-variable-symbol) } /* Name.Variable.Instance */
 .highlight .vm { color: var(--syntax-variable-symbol) } /* Name.Variable.Magic */
 .highlight .il { color: var(--syntax-operator-literal-number) } /* Literal.Number.Integer.Long */
+
+/* Pieces Fix */
+.pieces-code-wrapper {
+  background: #0f0f23;
+}
