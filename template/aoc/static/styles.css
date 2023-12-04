@@ -6,7 +6,8 @@ body {
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
   font-size: 14pt;
-  min-width: 60em;
+  width: 100%;
+  /*min-width: 60em;*/
 }
 img { border:0; }
 a { outline:0; }
@@ -47,6 +48,7 @@ code {
   display: inline-block;
   margin: 0;
   padding: 0;
+  overflow-x: scroll;
 }
 pre:not(:has(code)):before,
 code:before {
