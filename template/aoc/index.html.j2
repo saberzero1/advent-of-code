@@ -40,7 +40,6 @@
 {% endfor %}
 
 {% block notebook_css %}
-{{ resources.include_css("static/styles.css") }}
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
 body {
@@ -85,6 +84,8 @@ div#notebook-container{
 
 {%- block html_head_css -%}
 {%- endblock html_head_css -%}
+
+{{ resources.include_css("static/styles.css") }}
 
 {%- endblock html_head -%}
 </head>
