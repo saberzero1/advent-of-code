@@ -10,8 +10,8 @@ body {
   font-family: "Source Code Pro", monospace;
   font-weight: 300;
   font-size: 14pt;
-  width: 100%;
-  overflow: hidden;
+  width: 100vw;
+  overflow-x: hidden;
   /*min-width: 60em;*/
 }
 img { border:0; }
