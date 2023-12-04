@@ -33,12 +33,14 @@ code {
 }
 .highlight > pre,
 .highlight > * > pre {
-  width: 100vw;
+  position: relative;
+  width: calc(100vw - 32px);
   overflow-x: scroll;
 }
 .highlight > pre:before,
 .highlight > * > pre:before {
-  width: 100vw;
+  position: absolute;
+  width: calc(100vw - 32px);
 }
 
 .output_subarea > pre,
@@ -73,6 +75,7 @@ code {
   display: inline-block;
   margin: 0;
   padding: 0;
+  border: 1px solid #333340;
 }
 pre:not(:has(code)) {
   overflow-x: scroll;
@@ -88,7 +91,6 @@ code:before {
   right: -2px;
   top: 3px;
   bottom: 0px;
-  border: 1px solid #333340;
   background: #10101a;
 }
 pre.wrap {
