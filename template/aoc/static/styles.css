@@ -63,7 +63,7 @@ code {
 .highlight > pre,
 .highlight > * > pre {
   position: relative;
-  width: calc(100vw - 24px);
+  width: calc(100vw - 40px);
   max-width: 900px; /* 80 char per line */
   overflow-x: scroll;
 }
