@@ -33,8 +33,12 @@ code {
 }
 .highlight > pre,
 .highlight > * > pre {
-  width: fit-content;
+  width: 100vw;
   overflow-x: scroll;
+}
+.highlight > pre:before,
+.highlight > * > pre:before {
+  width: 100vw;
 }
 
 .output_subarea > pre,
