@@ -26,6 +26,14 @@ code {
     background-color: #10101a;
     filter: brightness(1.5);
 }
+.input,
+.prompt,
+.input_prompt,
+.inner_cell,
+.input_area {
+  max-width: 100%;
+}
+
 .highlight,
 div.input_area {
   background-color: #0f0f23;
