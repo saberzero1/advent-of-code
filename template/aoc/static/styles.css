@@ -28,7 +28,8 @@ code {
     background-color: #10101a;
     filter: brightness(1.5);
 }
-.input {
+.highlight > pre,
+.highlight > * > pre {
   overflow-x: scroll;
 }
 
