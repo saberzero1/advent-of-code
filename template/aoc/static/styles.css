@@ -75,6 +75,11 @@ code {
   overflow: visible;
 }
 
+.output_subarea > pre:before,
+.output_subarea > * > pre:before {
+  content: 'Output: ';
+}
+
 .highlight,
 div.input_area {
   background-color: #0f0f23;
