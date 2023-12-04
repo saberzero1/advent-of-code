@@ -10,6 +10,7 @@
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 12px;
+    height: 12px;
   }
 
   *::-webkit-scrollbar-track {
@@ -34,6 +35,8 @@ body {
   font-size: 14pt;
   width: 100%;
   overflow-x: hidden;
+  margin: 8px;
+  padding: 0;
   /*min-width: 60em;*/
 }
 img { border:0; }
