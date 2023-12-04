@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #0f0f23; /*337 x 5*/
   color: #cccccc;
