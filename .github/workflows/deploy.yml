@@ -44,3 +44,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Deploy: ({sha}) {msg}"
           SQUASH_HISTORY: true
+          CLEAR_GLOBS_FILE: '.targets'
