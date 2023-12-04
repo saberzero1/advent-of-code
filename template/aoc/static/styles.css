@@ -132,6 +132,11 @@ code:before {
   bottom: 0px;
   background: #10101a;
 }
+pre:not(:has(code)):before {
+  left: -2px;
+  right: -2px;
+}
+
 pre.wrap {
   max-width: 100%;
   white-space: pre-wrap;
