@@ -2,7 +2,7 @@
 
 /* Hide linter block */
 #notebook-container:first-child {
-  disply: none
+  display: none
 }
 
 /* ===== Scrollbar CSS ===== */
