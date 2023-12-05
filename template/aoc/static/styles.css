@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300');
 
+/* Hide linter block */
+#notebook-container:first-child: {
+  disply: none
+}
+
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
@@ -615,7 +620,7 @@ span.linenos { color: inherit; background-color: transparent; padding-left: 5px;
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .highlight .hll { background-color: #ffffcc }
-.highlight { background: #f8f8f8; }
+/* .highlight { background: #f8f8f8; } */
 .highlight .c { color: var(--syntax-comment); font-style: italic } /* Comment */
 .highlight .err { border: 1px solid var(--syntax-error) } /* Error */
 .highlight .k { color: var(--syntax-keyword); font-weight: bold } /* Keyword */
