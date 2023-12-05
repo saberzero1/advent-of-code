@@ -1,0 +1,12 @@
+.svn$
+.git
+build
+vendor/elastic*
+install
+.ipynb_checkpoints
+.github
+template
+.gitignore
+.targets
+README.md
+**/*.txt
