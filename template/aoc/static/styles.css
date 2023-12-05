@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300');
 
 /* Hide linter block */
-#notebook-container:first-child {
+div.cell:first-child {
   display: none
 }
 
