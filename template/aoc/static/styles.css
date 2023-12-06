@@ -14,7 +14,7 @@ div.cell:first-child {
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 12px;
+    width: 0px;
     height: 12px;
   }
 
@@ -48,10 +48,6 @@ body {
   padding: 0;
   /*min-width: 60em;*/
 }
-html, body {
-    max-width: calc(100% - 12px);
-    overflow-x: hidden;
-}
 img { border:0; }
 a { outline:0; }
 main, figure, figcaption { display:block; }
@@ -63,8 +59,7 @@ header, main {
 
 @media screen and (max-width: 932px) {
   header, main {
-    /* max-width: calc(100% - 16px); */
-    max-width: min(100vw - 40px + 12px, 920px);
+    max-width: calc(100% - 16px);
   }
 }
 
