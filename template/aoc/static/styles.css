@@ -48,6 +48,10 @@ body {
   padding: 0;
   /*min-width: 60em;*/
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 img { border:0; }
 a { outline:0; }
 main, figure, figcaption { display:block; }
