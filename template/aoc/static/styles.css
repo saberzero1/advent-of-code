@@ -59,7 +59,8 @@ header, main {
 
 @media screen and (max-width: 932px) {
   header, main {
-    max-width: calc(100% - 16px);
+    /* max-width: calc(100% - 16px); */
+    max-width: calc(100vw - 40px + 12px);
   }
 }
 
