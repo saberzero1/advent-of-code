@@ -14,7 +14,7 @@ div.cell:first-child {
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 12px;
+    width: 0px;
     height: 12px;
   }
 
@@ -57,7 +57,7 @@ header, main {
   max-width: 900px;
 }
 
-@media screen and (max-width: 932px) {
+@media only screen and (max-width: 932px) {
   header, main {
     max-width: calc(100% - 16px);
   }
@@ -80,6 +80,7 @@ code {
 }
 .highlight > pre:before,
 .highlight > * > pre:before {
+  overflow-x: hidden;
   position: absolute;
   width: calc(100vw - 24px);
   max-width: 900px; /* 80 char per line */
