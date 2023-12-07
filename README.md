@@ -1,6 +1,6 @@
 ---
 date_created: Friday, December 1st 2023, 12:33:23 am
-date_modified: Wednesday, December 6th 2023, 12:25:33 am
+date_modified: Thursday, December 7th 2023, 11:55:15 pm
 ---
 
 [Web version](https://saberzero1.github.io/advent-of-code/)
@@ -9,6 +9,7 @@ date_modified: Wednesday, December 6th 2023, 12:25:33 am
 
 | Solution | Notebook |
 | --- | --- |
+| [\[Day 7: Camel Cards\]](https://saberzero1.github.io/advent-of-code/2023/day/7.html) | [\[Notebook\]](solutions/2023/day/7.ipynb) |
 | [\[Day 6: Wait For It\]](https://saberzero1.github.io/advent-of-code/2023/day/6.html) | [\[Notebook\]](solutions/2023/day/6.ipynb) |
 | [\[Day 5: If You Give A Seed A Fertilizer\]](https://saberzero1.github.io/advent-of-code/2023/day/5.html) | [\[Notebook\]](solutions/2023/day/5.ipynb) |
 | [\[Day 4: Scratchcards\]](https://saberzero1.github.io/advent-of-code/2023/day/4.html) | [\[Notebook\]](solutions/2023/day/4.ipynb) |
