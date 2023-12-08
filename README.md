@@ -9,7 +9,7 @@ date_modified: Friday, December 8th 2023, 9:52:43 pm
 
 | Solution | Notebook |
 | --- | --- |
-| [\[Day 8: Haunted Wasteland\]](https://saberzero1.github.io/advent-of-code/2023/day/7.html) | [\[Notebook\]](solutions/2023/day/8.ipynb) |
+| [\[Day 8: Haunted Wasteland\]](https://saberzero1.github.io/advent-of-code/2023/day/8.html) | [\[Notebook\]](solutions/2023/day/8.ipynb) |
 | [\[Day 7: Camel Cards\]](https://saberzero1.github.io/advent-of-code/2023/day/7.html) | [\[Notebook\]](solutions/2023/day/7.ipynb) |
 | [\[Day 6: Wait For It\]](https://saberzero1.github.io/advent-of-code/2023/day/6.html) | [\[Notebook\]](solutions/2023/day/6.ipynb) |
 | [\[Day 5: If You Give A Seed A Fertilizer\]](https://saberzero1.github.io/advent-of-code/2023/day/5.html) | [\[Notebook\]](solutions/2023/day/5.ipynb) |
