@@ -295,3 +295,7 @@ dist
 
 # package.json
 package.json
+
+# Converter
+conv_input.txt
+conv_output.txt
