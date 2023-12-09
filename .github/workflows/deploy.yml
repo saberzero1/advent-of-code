@@ -31,8 +31,8 @@ jobs:
       - name: Convert .ipynb to .html
         run: find . -name '*.ipynb' -type f -execdir jupyter nbconvert --template aoc --to html {} \; -execdir rm {} \;
 
-      - name: Replace links
-        run: find . -name '*.html' -type f -execdir sed -i 's/.ipynb">/.html">/g' {} \; && find . -name '*.html' -type f -execdir sed -i 's/.ipynb#----Part-Two----">/.html#----Part-Two----">/g' {} \;
+      - name: Regex clean
+        run: find . -name '*.html' -type f -execdir sed -i 's/.ipynb">/.html">/g' {} \; && find . -name '*.html' -type f -execdir sed -i 's/.ipynb#----Part-Two----">/.html#----Part-Two----">/g' {} \; && find . -name '*.html' -type f -execdir sed -ri 's/\*\*(.*?)\*\*/<strong>\1<\/strong>/g' {} \; && find . -name '*.html' -type f -execdir sed -ri 's/\*\*//g' {} \;
 
       - name: Push to gh-pages branch
         uses: s0/git-publish-subdir-action@develop
