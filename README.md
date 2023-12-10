@@ -1,6 +1,6 @@
 ---
 date_created: Friday, December 1st 2023, 12:33:23 am
-date_modified: Saturday, December 9th 2023, 6:24:31 am
+date_modified: Sunday, December 10th 2023, 10:01:25 pm
 ---
 
 [Web version](https://saberzero1.github.io/advent-of-code/)
@@ -9,6 +9,7 @@ date_modified: Saturday, December 9th 2023, 6:24:31 am
 
 | Solution | Notebook |
 | --- | --- |
+| [\[Day 10: Pipe Maze\]](https://saberzero1.github.io/advent-of-code/2023/day/10.html) | [\[Notebook\]](solutions/2023/day/10.ipynb) |
 | [\[Day 9: Mirage Maintenance\]](https://saberzero1.github.io/advent-of-code/2023/day/9.html) | [\[Notebook\]](solutions/2023/day/9.ipynb) |
 | [\[Day 8: Haunted Wasteland\]](https://saberzero1.github.io/advent-of-code/2023/day/8.html) | [\[Notebook\]](solutions/2023/day/8.ipynb) |
 | [\[Day 7: Camel Cards\]](https://saberzero1.github.io/advent-of-code/2023/day/7.html) | [\[Notebook\]](solutions/2023/day/7.ipynb) |
