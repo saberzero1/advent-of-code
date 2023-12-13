@@ -1,6 +1,6 @@
 ---
 date_created: Friday, December 1st 2023, 12:33:23 am
-date_modified: Sunday, December 10th 2023, 10:01:25 pm
+date_modified: Wednesday, December 13th 2023, 11:14:12 pm
 ---
 
 [Web version](https://saberzero1.github.io/advent-of-code/)
@@ -9,6 +9,9 @@ date_modified: Sunday, December 10th 2023, 10:01:25 pm
 
 | Solution | Notebook |
 | --- | --- |
+| [\[Day 13: Point of Incidence\]](https://saberzero1.github.io/advent-of-code/2023/day/13.html) | [\[Notebook\]](solutions/2023/day/13.ipynb) |
+| [\[Day 12: Hot Springs\]](https://saberzero1.github.io/advent-of-code/2023/day/12.html) | [\[Notebook\]](solutions/2023/day/12.ipynb) |
+| [\[Day 11: Cosmic Expansion\]](https://saberzero1.github.io/advent-of-code/2023/day/11.html) | [\[Notebook\]](solutions/2023/day/11.ipynb) |
 | [\[Day 10: Pipe Maze\]](https://saberzero1.github.io/advent-of-code/2023/day/10.html) | [\[Notebook\]](solutions/2023/day/10.ipynb) |
 | [\[Day 9: Mirage Maintenance\]](https://saberzero1.github.io/advent-of-code/2023/day/9.html) | [\[Notebook\]](solutions/2023/day/9.ipynb) |
 | [\[Day 8: Haunted Wasteland\]](https://saberzero1.github.io/advent-of-code/2023/day/8.html) | [\[Notebook\]](solutions/2023/day/8.ipynb) |
