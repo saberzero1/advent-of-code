@@ -1,6 +1,6 @@
 ---
 date_created: Friday, December 1st 2023, 12:33:23 am
-date_modified: Thursday, December 14th 2023, 7:04:40 am
+date_modified: Friday, December 15th 2023, 6:38:11 am
 ---
 
 [Web version](https://saberzero1.github.io/advent-of-code/)
@@ -9,6 +9,7 @@ date_modified: Thursday, December 14th 2023, 7:04:40 am
 
 | Solution | Notebook |
 | --- | --- |
+| [\[Day 15: Lens Library\]](https://saberzero1.github.io/advent-of-code/2023/day/15.html) | [\[Notebook\]](solutions/2023/day/15.ipynb) |
 | [\[Day 14: Parabolic Reflector Dish\]](https://saberzero1.github.io/advent-of-code/2023/day/14.html) | [\[Notebook\]](solutions/2023/day/14.ipynb) |
 | [\[Day 13: Point of Incidence\]](https://saberzero1.github.io/advent-of-code/2023/day/13.html) | [\[Notebook\]](solutions/2023/day/13.ipynb) |
 | [\[Day 12: Hot Springs\]](https://saberzero1.github.io/advent-of-code/2023/day/12.html) | [\[Notebook\]](solutions/2023/day/12.ipynb) |
