@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Day 7</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.0/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script><script type="text/javascript">
+  window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='CODE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});
+  window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='PRE'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target);s.addRange(r);}});
+  window.addEventListener('click', function(e,s,r){if(e.target.nodeName==='SPAN'&&e.detail===3){s=window.getSelection();s.removeAllRanges();r=document.createRange();r.selectNodeContents(e.target.parentNode);s.addRange(r);}});
+</script>
+<style type="text/css">
+  pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+  </style>
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}@media print {
+  body {
+    margin: 0;
+  }
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  }
+  div.output_wrapper {
+    display: block;
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
+  }
+}
+</style>
+<!-- Load mathjax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: {
+                    automatic: true
+                    }
+                }
+            });
+
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+<!-- End of mathjax configuration --><style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300');
+
+/* Hide linter block */
+div.cell:first-child {
+  display: none
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #333340 #0f0f23;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 0px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0f0f23;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #333340;
+    border-radius: 10px;
+    border: 3px solid #0f0f23;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: #0f0f23;
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f23; /*337 x 5*/
+  color: #cccccc;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 300;
+  font-size: 14pt;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 8px;
+  padding: 0;
+  /*min-width: 60em;*/
+}
+img { border:0; }
+a { outline:0; }
+main, figure, figcaption { display:block; }
+pre, code { font-family: "Source Code Pro", monospace; }
+header, main {
+  -webkit-text-size-adjust: none;
+  max-width: 900px;
+}
+
+@media only screen and (max-width: 932px) {
+  header, main {
+    max-width: calc(100% - 16px);
+  }
+}
+
+pre:not(:has(code)),
+code {
+    background-color: #10101a;
+    filter: brightness(1.5);
+}
+.input {
+  width: fit-content;
+}
+.highlight > pre,
+.highlight > * > pre {
+  position: relative;
+  width: calc(100vw - 40px + 12px);
+  max-width: 900px; /* 80 char per line */
+  overflow-x: auto;
+}
+.highlight > pre:before,
+.highlight > * > pre:before {
+  overflow-x: hidden;
+  position: absolute;
+  width: calc(100vw - 24px);
+  max-width: 900px; /* 80 char per line */
+}
+pre > code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.output_subarea > pre,
+.output_subarea > * > pre {
+  overflow: visible;
+}
+
+.output_subarea:before {
+  content: 'Output: ';
+}
+
+.highlight,
+div.input_area {
+  background-color: #0f0f23;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #009900;
+  white-space: nowrap;
+}
+a:hover, a:focus {
+  color: #99ff99;
+}
+h1, h2 {
+  font-size: 1em;
+  font-weight: normal;
+}
+.anchor-link,
+div.prompt.input_prompt {
+    display: none;
+}
+pre:not(:has(code)),
+code {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #333340;
+}
+pre:not(:has(code)) {
+  overflow-x: auto;
+}
+
+pre:not(:has(code)):before,
+code:before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  display: block;
+  /*left: -2px;*/
+  /*right: -2px;*/
+  top: 3px;
+  bottom: 0px;
+  background: #10101a;
+}
+pre:not(:has(code)):before {
+  left: -2px;
+  right: -2px;
+}
+
+pre.wrap {
+  max-width: 100%;
+  white-space: pre-wrap;
+}
+
+.quiet {
+  opacity: .5;
+}
+p.wrap {
+  /*width: 45em;*/
+}
+
+.hidden-until-hover {
+  border: 1px dotted gray;
+  overflow: hidden;
+  position: relative;
+  padding: 0 .5em;
+  transition: border-color 0s linear 5s;
+}
+.hidden-until-hover:before {
+  content: "(hover to reveal)";
+  position: absolute;
+  opacity: .5;
+  text-align: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: width 0s linear 5s;
+}
+.hidden-until-hover > * {
+  visibility: hidden;
+  transition: visibility 0s linear 5s;
+}
+.hidden-until-hover:hover {
+  transition: border-color 0s linear 1s;
+  border-color: transparent;
+}
+.hidden-until-hover:hover:before {
+  content: "( keep hovering )";
+  transition: width 0s linear 1s;
+  width: 0;
+}
+.hidden-until-hover:hover > * {
+  transition: visibility 0s linear 1s;
+  visibility: visible;
+}
+
+.warning:not(.warning-active) {
+  transition: color 1s, opacity 1s;
+}
+.warning-active {
+  color: #ff0000;
+  opacity: 1;
+}
+
+.star-count {
+  color: #ffff66;
+}
+.supporter-badge {
+  color: #ffff66;
+}
+a.supporter-badge:hover, a.supporter-badge:focus {
+  text-decoration: none;
+  color: #ffffcc;
+  text-shadow: 0 0 5px #ffff66;
+}
+.sponsor-badge {
+  color: #79a2d8;
+}
+a.sponsor-badge:hover, a.sponsor-badge:focus {
+  text-decoration: none;
+  color: #ccdbed;
+  text-shadow: 0 0 5px #79a2d8;
+}
+
+#sidebar {
+  width: 200px;
+  float: right;
+  margin: 0 15px 2em 2em;
+  position: relative;
+  z-index: 10;
+}
+#sponsor {
+  margin-bottom: 2.5em;
+}
+
+header {
+  white-space: nowrap;
+  cursor: default;
+  z-index: 100;
+  margin-bottom: 2em;
+}
+header h1 {
+  display: inline-block;
+  margin: 0;
+  padding-right: 1em;
+}
+header h1 a, header h1 span {
+  display: inline-block;
+  text-decoration: none;
+  color: #00cc00;
+  text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
+}
+header h1 a:hover, header h1 a:focus {
+  color: #99ff99;
+  text-shadow: 0 0 2px #99ff99, 0 0 5px #99ff99;
+}
+header h1.title-event .title-event-wrap {
+  opacity: .33;
+  white-space: pre;
+}
+header .user {
+  display: inline-block;
+  padding-left: 1em;
+}
+header nav {
+  display: inline-block;
+}
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+header nav li {
+  display: inline-block;
+  padding: 0 .6em;
+}
+header nav a {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+}
+
+input[type="text"], textarea {
+  background: transparent;
+  color: inherit;
+  border: 1px solid #666666;
+  background: #10101a;
+  padding: 0 2px;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+textarea {
+  vertical-align: top;
+}
+
+label img {
+  vertical-align: bottom;
+  position: relative;
+  top: -3px;
+  margin-right: .3em;
+}
+input[type="radio"] { display: none; }
+input[type="radio"] ~ span {
+  cursor: pointer;
+  display: inline-block;
+}
+input[type="radio"] ~ span:before {
+  content: "( ) ";
+}
+input[type="radio"] ~ span:hover, input[type="radio"] ~ span:focus {
+  background-color: #19193b;
+}
+input[type="radio"]:checked ~ span {
+  color: #ffffff;
+}
+input[type="radio"]:checked ~ span:before {
+  content: "(O) ";
+}
+input[type="checkbox"] { display: none; }
+input[type="checkbox"] ~ span {
+  cursor: pointer;
+  display: inline-block;
+}
+input[type="checkbox"] ~ span:before {
+  content: "[ ] ";
+}
+input[type="checkbox"] ~ span:hover, input[type="checkbox"] ~ span:focus {
+  background-color: #19193b;
+}
+input[type="checkbox"]:checked ~ span {
+  color: #ffffff;
+}
+input[type="checkbox"]:checked ~ span:before {
+  content: "[X] ";
+}
+input[type="checkbox"]:disabled ~ span {
+  opacity: .3;
+  cursor: default;
+}
+input[type="checkbox"]:disabled ~ span:before {
+  content: "[-] ";
+}
+input[type="checkbox"]:disabled ~ span:hover {
+  background-color: transparent;
+}
+
+
+input[type="submit"] {
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  color: #009900;
+  cursor: pointer;
+}
+input[type="submit"]:hover, input[type="submit"]:focus {
+  color: #99ff99;
+}
+*::-moz-focus-inner {
+  padding: 0;
+  border: 0
+}
+
+article {
+  width: 45em;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+article:first-of-type {
+  margin-top: 0;
+}
+article h2 {
+  color: #ffffff;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  white-space: nowrap;
+}
+article h2 + * {
+  margin-top: 0;
+}
+article em {
+  color: #ffffff;
+  font-style: normal;
+  text-shadow: 0 0 5px #ffffff;
+}
+article em.star {
+  color: #ffff66;
+  font-style: normal;
+  text-shadow: 0 0 5px #ffff66;
+}
+article a {
+  white-space: nowrap;
+}
+article .aside {
+  opacity: .6;
+}
+article ul {
+  list-style-type: none;
+  padding: 0;
+}
+article li {
+  padding-left: 2.5em;
+  position: relative;
+}
+article li:before {
+  content: "\00a0\00a0-\00a0";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.day-success {
+  color: #ffff66;
+  text-shadow: 0 0 5px #ffff66;
+}
+
+form#settings input[type="radio"] ~ span {
+  /*min-width: 30em;*/
+}
+form#settings input[type="checkbox"] ~ span {
+  /*min-width: 30em;*/
+}
+
+.share {
+  color: #009900;
+  cursor: default;
+  transition: color .2s 1s;
+  /*position: relative;*/
+}
+.share:hover, .share:focus-within {
+  color: #aaffaa;
+  transition: color .2s 0s;
+}
+.share .share-content {
+  /*position: absolute; background: #0f0f23;*/
+  display: inline-block;
+  vertical-align: text-bottom;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  transition: max-width .2s 1s;
+}
+.share .share-content:before {
+  content: "\00a0";
+}
+.share .share-content:after {
+  /*content: "]";*/
+}
+.share:hover .share-content, .share:focus-within .share-content {
+  max-width: 45em;
+  transition: max-width .2s 0s;
+}
+
+.puzzle-input {
+  border: 1px solid #999999;
+  background: #333333;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+}
+
+.calendar {
+  cursor: default;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+}
+.calendar > span {
+  color: #333333;
+}
+.calendar > a {
+  text-decoration: none;
+  color: #666666;
+  outline: none;
+  cursor: default;
+}
+.calendar a:hover, .calendar a:focus {
+  background-color: #1e1e46;
+  background-color: rgba(119,119,165,.2);
+  cursor: pointer;
+}
+#calendar-countdown {
+  padding-left: .5em;
+  color: #cccccc;
+}
+.calendar .calendar-day { color: #666666; }
+.calendar a .calendar-day { color: #cccccc; }
+.calendar a .calendar-mark-complete,
+.calendar a .calendar-mark-verycomplete { visibility: hidden; }
+.calendar a.calendar-complete     .calendar-mark-complete,
+.calendar a.calendar-verycomplete .calendar-mark-complete { visibility: visible; color: #ffff66; }
+.calendar a.calendar-verycomplete .calendar-mark-verycomplete { visibility: visible; color: #ffff66; }
+
+.calendar .calendar-day-new               { animation: anim-day-new 5s; }
+.calendar .calendar-day-new .calendar-day { animation: anim-day-new-day 5s; }
+@keyframes anim-day-new {
+  0%   { color: #333333; text-shadow: 0 0 5px transparent; }
+  25%  { color: #ffffff; text-shadow: 0 0 5px #ffffff; }
+  100% { color: #666666; text-shadow: 0 0 5px transparent; }
+}
+@keyframes anim-day-new-day {
+  0%   { color: #666666; text-shadow: 0 0 5px transparent; }
+  25%  { color: #ffffff; text-shadow: 0 0 5px #ffffff; }
+  100% { color: #cccccc; text-shadow: 0 0 5px transparent; }
+}
+
+.eventlist-event {
+  white-space: pre;
+}
+
+.stats > span, .stats > span .stats-firstonly, .stats > span .stats-both {
+  color: #666666;
+}
+.stats > a {
+  color: #cccccc;
+  /*min-width: 35em;*/
+  display: inline-block;
+}
+.stats > a:hover, .stats > a:focus {
+  background-color: #1e1e46;
+}
+.stats-firstonly {
+  color: #9999cc;
+}
+.stats-both {
+  color: #ffff66;
+}
+
+.leaderboard-daylinks {
+  cursor: default;
+}
+.leaderboard-daylinks-selected {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+}
+.leaderboard-daydesc-first {
+  color: #9999cc;
+}
+.leaderboard-daydesc-both {
+  color: #ffff66;
+}
+.leaderboard-entry {
+  white-space: pre;
+}
+.leaderboard-entry .leaderboard-totalscore {
+  color: #ffffff;
+}
+.leaderboard-anon {
+  opacity: .6;
+}
+.leaderboard-userphoto {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 .5em;
+  text-align: center;
+}
+.leaderboard-userphoto img {
+  height: 20px;
+  max-width: 20px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+.leaderboard-time {
+  opacity: .5;
+}
+
+.privboard-row {
+  white-space: pre;
+}
+.privboard-name {
+  vertical-align: text-bottom;
+}
+.privboard-days > span    { display: inline-block; color: #333333; }
+.privboard-days > a       { display: inline-block; }
+.privboard-star-locked    { visibility: hidden; }
+.privboard-star-unlocked  { color: #333333; }
+.privboard-star-firstonly { color: #9999cc; }
+.privboard-star-both      { color: #ffff66; }
+.privboard-delbtn { opacity:.33; }
+.privboard-row:hover .privboard-delbtn { opacity:1; }
+
+.sponsors {
+  width: 46em; /*76 characters*/
+}
+.sponsor {
+  margin: 1em 0;
+}
+
+#MathJax_Message {
+  background-color: #0f0f23 !important;
+  border-color: #333340 !important;
+  color: #cccccc !important;
+  display: none !important;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  --syntax-comment: #3D7B7B;
+  --syntax-error: #FF0000;
+  --syntax-operator-literal-number: #666666;
+  --syntax-keyword: #008000;
+  --syntax-variable-symbol: #19177C;
+  --syntax-literal-string: #BA2121;
+  --syntax-literal-regex-interpol: #A45A77;
+}
+
+  pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+/* .highlight { background: #f8f8f8; } */
+.highlight .c { color: var(--syntax-comment); font-style: italic } /* Comment */
+.highlight .err { border: 1px solid var(--syntax-error) } /* Error */
+.highlight .k { color: var(--syntax-keyword); font-weight: bold } /* Keyword */
+.highlight .o { color: var(--syntax-operator-literal-number) } /* Operator */
+.highlight .ch { color: var(--syntax-comment); font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: var(--syntax-comment); font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: var(--syntax-comment); font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: var(--syntax-comment); font-style: italic } /* Comment.Single */
+.highlight .cs { color: var(--syntax-comment); font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: var(--syntax-keyword); font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: var(--syntax-keyword); font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: var(--syntax-keyword); font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: var(--syntax-keyword) } /* Keyword.Pseudo */
+.highlight .kr { color: var(--syntax-keyword); font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: var(--syntax-operator-literal-number) } /* Literal.Number */
+.highlight .s { color: var(--syntax-literal-string) } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: var(--syntax-keyword) } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: var(--syntax-keyword); font-weight: bold } /* Name.Tag */
+.highlight .nv { color: var(--syntax-variable-symbol) } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: var(--syntax-operator-literal-number) } /* Literal.Number.Bin */
+.highlight .mf { color: var(--syntax-operator-literal-number) } /* Literal.Number.Float */
+.highlight .mh { color: var(--syntax-operator-literal-number) } /* Literal.Number.Hex */
+.highlight .mi { color: var(--syntax-operator-literal-number) } /* Literal.Number.Integer */
+.highlight .mo { color: var(--syntax-operator-literal-number) } /* Literal.Number.Oct */
+.highlight .sa { color: var(--syntax-literal-string) } /* Literal.String.Affix */
+.highlight .sb { color: var(--syntax-literal-string) } /* Literal.String.Backtick */
+.highlight .sc { color: var(--syntax-literal-string) } /* Literal.String.Char */
+.highlight .dl { color: var(--syntax-literal-string) } /* Literal.String.Delimiter */
+.highlight .sd { color: var(--syntax-literal-string); font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: var(--syntax-literal-string) } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: var(--syntax-literal-string) } /* Literal.String.Heredoc */
+.highlight .si { color: var(--syntax-literal-regex-interpol); font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: var(--syntax-keyword) } /* Literal.String.Other */
+.highlight .sr { color: var(--syntax-literal-regex-interpol) } /* Literal.String.Regex */
+.highlight .s1 { color: var(--syntax-literal-string) } /* Literal.String.Single */
+.highlight .ss { color: var(--syntax-variable-symbol) } /* Literal.String.Symbol */
+.highlight .bp { color: var(--syntax-keyword) } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: var(--syntax-variable-symbol) } /* Name.Variable.Class */
+.highlight .vg { color: var(--syntax-variable-symbol) } /* Name.Variable.Global */
+.highlight .vi { color: var(--syntax-variable-symbol) } /* Name.Variable.Instance */
+.highlight .vm { color: var(--syntax-variable-symbol) } /* Name.Variable.Magic */
+.highlight .il { color: var(--syntax-operator-literal-number) } /* Literal.Number.Integer.Long */
+
+/* Pieces Fix */
+.pieces-code-wrapper {
+  background: #0f0f23;
+}
+</style></head>
+<body>
+<main>
+<div class="border-box-sizing" id="notebook" tabindex="-1">
+<div class="container" id="notebook-container">
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=243e5a22-cfd8-4736-aacd-d89434067480">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> lab_black
+<span class="o">%</span><span class="k">load_ext</span> pycodestyle_magic
+<span class="o">%</span><span class="k">flake8_on</span> --ignore E501
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=291e59c3-0214-4550-a378-f00ef19a3126"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="----Day-7:-Camel-Cards----">--- Day 7: Camel Cards ---<a class="anchor-link" href="#----Day-7:-Camel-Cards----">¶</a></h1><p><a href="../../index.html">[Index]</a> <a href="https://github.com/saberzero1/advent-of-code">[Repository]</a> <a href="https://adventofcode.com/2023/day/7">[Advent of Code Page]</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=5f37e553-4bd6-44c4-8f0d-fd8ad0c1400c"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="----Part-One----">--- Part One ---<a class="anchor-link" href="#----Part-One----">¶</a></h2><p>Your all-expenses-paid trip turns out to be a one-way, five-minute ride in an <a href="https://en.wikipedia.org/wiki/Airship">airship</a>. (At least it's a <strong>cool</strong> airship!) It drops you off at the edge of a vast desert and descends back to Island Island.</p>
+<p>"Did you bring the parts?"</p>
+<p>You turn around to see an Elf completely covered in white clothing, wearing goggles, and riding a large <a href="https://en.wikipedia.org/wiki/Dromedary">camel</a>.</p>
+<p>"Did you bring the parts?" she asks again, louder this time. You aren't sure what parts she's looking for; you're here to figure out why the sand stopped.</p>
+<p>"The parts! For the sand, yes! Come with me; I will show you." She beckons you onto the camel.</p>
+<p>After riding a bit across the sands of Desert Island, you can see what look like very large rocks covering half of the horizon. The Elf explains that the rocks are all along the part of Desert Island that is directly above Island Island, making it hard to even get there. Normally, they use big machines to move the rocks and filter the sand, but the machines have broken down because Desert Island recently stopped receiving the <strong>parts</strong> they need to fix the machines.</p>
+<p>You've already assumed it'll be your job to figure out why the parts stopped when she asks if you can help. You agree automatically.</p>
+<p>Because the journey will take a few days, she offers to teach you the game of <strong>Camel Cards</strong>. Camel Cards is sort of similar to <a href="https://en.wikipedia.org/wiki/List_of_poker_hands">poker</a> except it's designed to be easier to play while riding a camel.</p>
+<p>In Camel Cards, you get a list of <strong>hands</strong>, and your goal is to order them based on the <strong>strength</strong> of each hand. A hand consists of <strong>five cards</strong> labeled one of <code>A</code>, <code>K</code>, <code>Q</code>, <code>J</code>, <code>T</code>, <code>9</code>, <code>8</code>, <code>7</code>, <code>6</code>, <code>5</code>, <code>4</code>, <code>3</code>, or <code>2</code>. The relative strength of each card follows this order, where <code>A</code> is the highest and <code>2</code> is the lowest.</p>
+<p>Every hand is exactly one <strong>type</strong>. From strongest to weakest, they are:</p>
+<ul>
+<li><strong>Five of a kind</strong>, where all five cards have the same label: <code>AAAAA</code></li>
+<li><strong>Four of a kind</strong>, where four cards have the same label and one card has a different label: <code>AA8A</code></li>
+<li><strong>Full house</strong>, where three cards have the same label, and the remaining two cards share a different label: <code>23332</code></li>
+<li><strong>Three of a kind</strong>, where three cards have the same label, and the remaining two cards are each different from any other card in the hand: <code>TTT98</code></li>
+<li><strong>Two pair</strong>, where two cards share one label, two other cards share a second label, and the remaining card has a third label: <code>23432</code></li>
+<li><strong>One pair</strong>, where two cards share one label, and the other three cards have a different label from the pair and each other: <code>A23A4</code></li>
+<li><strong>High card</strong>, where all cards' labels are distinct: <code>23456</code></li>
+</ul>
+<p>Hands are primarily ordered based on type; for example, every <strong>full house</strong> is stronger than any <strong>three of a kind</strong>.</p>
+<p>If two hands have the same type, a second ordering rule takes effect. Start by comparing the <strong>first card in each hand</strong>. If these cards are different, the hand with the stronger first card is considered stronger. If the first card in each hand have the <strong>same label</strong>, however, then move on to considering the <strong>second card in each hand</strong>. If they differ, the hand with the higher second card wins; otherwise, continue with the third card in each hand, then the fourth, then the fifth.</p>
+<p>So, <code>33332</code> and <code>2AAAA</code> are both <strong>four of a kind hands</strong>, but <code>33332</code> is stronger because its first card is stronger. Similarly, <code>77888</code> and <code>77788</code> are both a <strong>full house</strong>, but <code>77888</code> is stronger because its third card is stronger (and both hands have the same first and second card).</p>
+<p>To play Camel Cards, you are given a list of hands and their corresponding <strong>bid</strong> (your puzzle input). For example:</p>
+<pre><code>32T3K 765
+T55J5 684
+KK677 28
+KTJJT 220
+QQQJA 483
+</code></pre>
+<p>This example shows five hands; each hand is followed by its <strong>bid</strong> amount. Each hand wins an amount equal to its bid multiplied by its <strong>rank</strong>, where the weakest hand gets rank 1, the second-weakest hand gets rank 2, and so on up to the strongest hand. Because there are five hands in this example, the strongest hand will have rank 5 and its bid will be multiplied by 5.</p>
+<p>So, the first step is to put the hands in order of strength:</p>
+<ul>
+<li><code>32T3K</code> is the only one pair and the other hands are all a stronger type, so it gets rank 1.</li>
+<li><code>KK677</code> and <code>KTJJT</code> are both two pair. Their first cards both have the same label, but the second card of <code>KK677</code> is stronger (<code>K</code> vs <code>T</code>), so <code>KTJJT</code> gets rank 2 and <code>KK677</code> gets rank 3.</li>
+<li><code>T55J5</code> and <code>QQQJA</code> are both three of a kind. <code>QQQJA</code> has a stronger first card, so it gets rank 5 and <code>T55J5</code> gets rank 4.</li>
+</ul>
+<p>Now, you can determine the total winnings of this set of hands by adding up the result of multiplying each hand's bid with its rank (<code>765</code> * 1 + <code>220</code> * 2 + <code>28</code> * 3 + <code>684</code> * 4 + <code>483</code> * 5). So the total winnings in this example are <strong><code>6440</code></strong>.</p>
+<p>Find the rank of every hand in your set. <strong>What are the total winnings?</strong></p>
+<p>Your puzzle answer was <code>255048101</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=123dcc60-b478-4e0e-be5a-b444c6738acf">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"input/7.txt"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+
+
+<span class="k">def</span> <span class="nf">hands</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">ignore_jokers</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ignore_jokers</span><span class="p">:</span>
+        <span class="n">hand</span> <span class="o">=</span> <span class="n">hand</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"J"</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">)</span>
+    <span class="n">rank</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"J23456789TXQKA"</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">hand</span><span class="p">]</span>
+    <span class="n">total_score</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="s2">"J23456789TQKA"</span><span class="p">:</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">hand</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"J"</span><span class="p">,</span> <span class="n">face</span><span class="p">))</span>
+        <span class="n">parse</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">5</span><span class="p">,),</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">parse</span><span class="p">)</span>
+        <span class="n">total_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">total_score</span><span class="p">),</span> <span class="o">*</span><span class="n">rank</span><span class="p">)</span>
+
+
+<span class="n">hand</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">hands</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">bid</span><span class="p">))</span> <span class="k">for</span> <span class="n">hand</span><span class="p">,</span> <span class="n">bid</span> <span class="ow">in</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">bid</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">index</span> <span class="o">*</span> <span class="n">bid</span> <span class="o">+</span> <span class="n">bid</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>255048101
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=14c35b22-5e05-45a3-bb94-838f7f50e63b"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="----Part-Two----">--- Part Two ---<a class="anchor-link" href="#----Part-Two----">¶</a></h2><p>To make things a little more interesting, the Elf introduces one additional rule. Now, <code>J</code> cards are <a href="https://en.wikipedia.org/wiki/Joker_(playing_card">jokers</a>) - wildcards that can act like whatever card would make the hand the strongest type possible.</p>
+<p>To balance this, <strong><code>J</code> cards are now the weakest individual cards</strong>, weaker even than <code>2</code>. The other cards stay in the same order: <code>A</code>, <code>K</code>, <code>Q</code>, <code>T</code>, <code>9</code>, <code>8</code>, <code>7</code>, <code>6</code>, <code>5</code>, <code>4</code>, <code>3</code>, <code>2</code>, <code>J</code>.</p>
+<p><code>J</code> cards can pretend to be whatever card is best for the purpose of determining hand type; for example, <code>QJJQ2</code> is now considered <strong>four of a kind</strong>. However, for the purpose of breaking ties between two hands of the same type, <code>J</code> is always treated as <code>J</code>, not the card it's pretending to be: <code>JKKK2</code> is weaker than <code>QQQQ2</code> because <code>J</code> is weaker than <code>Q</code>.</p>
+<p>Now, the above example goes very differently:</p>
+<pre><code>32T3K 765
+T55J5 684
+KK677 28
+KTJJT 220
+QQQJA 483
+</code></pre>
+<ul>
+<li><code>32T3K</code> is still the only <strong>one pair</strong>; it doesn't contain any jokers, so its strength doesn't increase.</li>
+<li><code>KK677</code> is now the only <strong>two pair</strong>, making it the second-weakest hand.</li>
+<li><code>T55J5</code>, <code>KTJJT</code>, and <code>QQQJA</code> are now all <strong>four of a kind</strong>! <code>T55J5</code> gets rank 3, <code>QQQJA</code> gets rank 4, and <code>KTJJT</code> gets rank 5.</li>
+</ul>
+<p>With the new joker rule, the total winnings in this example are <strong><code>5905</code></strong>.</p>
+<p>Using the new joker rule, find the rank of every hand in your set. <strong>What are the new total winnings?</strong></p>
+<p>Your puzzle answer was <code>253718286</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" id="cell-id=65598451-ba66-4ffc-8964-338fd9f2891e">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">hand</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">hands</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">bid</span><span class="p">))</span> <span class="k">for</span> <span class="n">hand</span><span class="p">,</span> <span class="n">bid</span> <span class="ow">in</span> <span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">bid</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hand</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">index</span> <span class="o">*</span> <span class="n">bid</span> <span class="o">+</span> <span class="n">bid</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>253718286
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body>
+</html>
